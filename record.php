@@ -53,10 +53,13 @@
                 </div>
             </div>
         </nav>
+        <section class="container space-top alert alert-danger text-center">
+            <h4>YOU MUST CREATE AN ACCESS BEFORE A USER</h4>
+        </section>
         
-        <section class="container space-top alert alert-success">
+        <section class="container space-form alert alert-success">
             <h4>Access</h4>
-            <form class="form-inline">
+            <form class="form-inline" action="php/insertData.php" method="post">
                 <div class="form-group">
                     <label for="username">Username:</label>
                     <input type="text" class="form-control" id="username" required>
@@ -73,7 +76,14 @@
                         <option value="ADMIN">  ADMIN  </option>
                     </select>
                 </div>
-                <button type="submit" class="btn btn-primary">Submit</button>
+                  <div class="form-group">
+                    <label for="role">Region:</label>
+                    <select class="form-control" id="region" required>
+                        <option value="AGUASCALIENTES">AGUASCALIENTES</option>
+                        <option value="DURANGO">DURANGO</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn btn-primary" name="access">Submit</button>
             </form> 
         </section>
         
@@ -118,6 +128,10 @@
                             <input type="text" class="form-control" required id="emailStu">
                         </div>
                          <div class="form-group">
+                            <label for="curpStu"> CURP: </label>
+                            <input type="text" class="form-control" required id="curplStu">
+                        </div>
+                         <div class="form-group">
                             <label for="dateStu"> Start date: </label>
                             <input type="text" class="form-control" required id="dateStu" name="date">
                         </div>
@@ -142,34 +156,38 @@
                 <div class="row">
                     <div class="col-lg-6">
                         <div class="form-group">
-                            <label for="nameStu"> Name: </label>
+                            <label for="nameTea"> Name: </label>
                             <input type="text" class="form-control" required id="nameTea">
                         </div>
                         <div class="form-group">
-                            <label for="flastStu"> Father lastname: </label>
+                            <label for="flastTea"> Father lastname: </label>
                             <input type="text" class="form-control" required id="flastTea">
                         </div>
                         <div class="form-group">
-                            <label for="mlastStu"> Mother lastname: </label>
+                            <label for="mlastTea"> Mother lastname: </label>
                             <input type="text" class="form-control" required id="mlastTea">
                         </div>
                         <div class="form-group">
-                            <label for="phoneStu"> Phone number: </label>
+                            <label for="phoneTea"> Phone number: </label>
                             <input type="text" class="form-control" required id="phoneTea">
                         </div>
                     </div>
                     <div class="col-lg-6">
                         <div class="form-group">
-                            <label for="addressStu"> Address: </label>
+                            <label for="addressTea"> Address: </label>
                             <input type="text" class="form-control" required id="addressTea">
                         </div>
                         <div class="form-group">
-                            <label for="emailStu"> Email: </label>
+                            <label for="emailTea"> Email: </label>
                             <input type="text" class="form-control" required id="emailTea">
                         </div>
+                        <div class="form-group">
+                            <label for="curpTea"> CURP: </label>
+                            <input type="text" class="form-control" required id="curplTea">
+                        </div>
                          <div class="form-group">
-                            <label for="dateStu"> Start date: </label>
-                            <input type="text" class="form-control" required id="dateStu" name="date">
+                            <label for="dateTea"> Start date: </label>
+                            <input type="text" class="form-control" required id="dateTea" name="date">
                         </div>
                     </div>
                 </div>
