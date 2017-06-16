@@ -2,7 +2,6 @@
     /*
     *User: Edgar Medina Camarena
     *Date 13/05/17
-    *Time 15:35 PM
     * Common Page
     */
     session_start();
@@ -62,15 +61,15 @@
             <form class="form-inline" action="php/insertData.php" method="post">
                 <div class="form-group">
                     <label for="username">Username:</label>
-                    <input type="text" class="form-control" id="username" required>
+                    <input type="text" class="form-control" id="username" name="user" required>
                 </div>
                 <div class="form-group">
                     <label for="pwd">Password:</label>
-                    <input type="text" class="form-control" id="pwd" required>
+                    <input type="text" class="form-control" id="pwd" name="pass" required>
                 </div>
                 <div class="form-group">
                     <label for="role">Role:</label>
-                    <select class="form-control" id="role" required>
+                    <select class="form-control" id="role" name="role" required>
                         <option value="STUDENT">STUDENT</option>
                         <option value="TEACHER">TEACHER</option>
                         <option value="ADMIN">  ADMIN  </option>
@@ -78,7 +77,7 @@
                 </div>
                   <div class="form-group">
                     <label for="role">Region:</label>
-                    <select class="form-control" id="region" required>
+                    <select class="form-control" id="region" name="region" required>
                         <option value="AGUASCALIENTES">AGUASCALIENTES</option>
                         <option value="DURANGO">DURANGO</option>
                     </select>
