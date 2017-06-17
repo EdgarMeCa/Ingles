@@ -3,12 +3,10 @@
     * Date 16/06/17
     * This file helps with the operations of the database
     */
-    include 'connection.php';
 
-    function getLastAccess(){
+    function getLastAccess($connection){
         
         $query = "SELECT * FROM acceso ORDER BY idAcceso DESC LIMIT 1";
-        $connection = openConnection();
         $idAccess = "";
         try
         {
@@ -26,7 +24,6 @@
             echo "Error: ".$e -> getMessage();
             echo "<br>Something happend D:";
         }
-        closeConnection($connection);
         return $idAcceso;
     }
 

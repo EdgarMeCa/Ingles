@@ -37,6 +37,7 @@
         $queryAcceso = "SELECT * FROM acceso WHERE Username = :user AND Password = :pass";
         $idAcceso = 0;
         $rol = "";
+        $region = "";
         
         try
         {
@@ -52,8 +53,9 @@
                 {
                     $idAcceso = $row['idAcceso'];
                     $rol = $row['Rol'];
+                    $region = $row['Region'];
                 }
-                createCredentials4User($idAcceso,$rol,$conn);
+                createCredentials4User($idAcceso,$rol,$region,$conn);
                 
                 closeConnection($conn);
                 
@@ -61,8 +63,7 @@
             }
             else
             {   
-                //header("location: ../index.html");
-                echo "no conto bien";
+                header("location: ../index.html");
             }
             
             
@@ -74,7 +75,7 @@
         }
     }
 
-    function createCredentials4User($idAcceso, $rol, $conn){
+    function createCredentials4User($idAcceso, $rol, $region, $conn){
         $user = ""; $name = "";
         
         if(strcmp($rol,"STUDENT") == 0)
@@ -83,23 +84,25 @@
             foreach($dataUser as $row)
             {
                 $user = $row['idAlumno'];
-                $name = $row['Nombre']." ".$row['APaterno']." ".$row['AMaterno'];
+                $name = $row['Nombre'];
             }
             $_SESSION['user'] = $user;
             $_SESSION['name'] = $name;
             $_SESSION['role'] = $rol;
+            $_SESSION['region'] = $region;
         }
         if(strcmp($rol,"TEACHER") == 0 or strcmp($rol,"ADMIN") == 0 or strcmp($rol,"SUPERADMIN") == 0)
         {
             $dataUser = query4Teacher($idAcceso,$conn); 
             foreach($dataUser as $row)
             {
-                $user = $row['idProferos'];
-                $name = $row['Nombre']." ".$row['APaterno']." ".$row['AMaterno'];
+                $user = $row['idProfesor'];
+                $name = $row['Nombre'];
             }
-            $_SESSION['user'] = $row['idProfesor'];
-            $_SESSION['name'] = $row['Nombre']." ".$row['APaterno']." ".$row['AMaterno'];
+            $_SESSION['user'] = $user;
+            $_SESSION['name'] = $name;
             $_SESSION['role'] = $rol;
+            $_SESSION['region'] = $region;
         }
     }
 

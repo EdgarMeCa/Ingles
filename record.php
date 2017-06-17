@@ -15,7 +15,7 @@
 <!DOCTYPE HTML>
 <html>
     <head>
-        <title>Pagina de Inicio</title>
+        <title>Record</title>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         
@@ -75,13 +75,6 @@
                         <option value="ADMIN">  ADMIN  </option>
                     </select>
                 </div>
-                  <div class="form-group">
-                    <label for="role">Region:</label>
-                    <select class="form-control" id="region" name="region" required>
-                        <option value="AGUASCALIENTES">AGUASCALIENTES</option>
-                        <option value="DURANGO">DURANGO</option>
-                    </select>
-                </div>
                 <button type="submit" class="btn btn-primary" name="access">Submit</button>
             </form> 
         </section>
@@ -97,7 +90,7 @@
                 </div>
             </div>
             
-            <form id="form-student">
+            <form id="form-student" action="php/insertData.php" method="post">
                 <div class="row">
                     <div class="col-lg-6">
                         <div class="form-group">
