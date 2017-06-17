@@ -2,7 +2,6 @@
     /*
     *User: Edgar Medina Camarena
     *Date 13/05/17
-    *Time 13:53 PM
     * This algorithm is used for login the user 
     */
     include 'connection.php';

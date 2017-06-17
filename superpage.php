@@ -2,7 +2,6 @@
     /*
     *User: Edgar Medina Camarena
     *Date 13/05/17
-    *Time 15:35 PM
     * Common Page
    */
     session_start();

@@ -102,33 +102,33 @@
                     <div class="col-lg-6">
                         <div class="form-group">
                             <label for="nameStu"> Name: </label>
-                            <input type="text" class="form-control" required id="nameStu">
+                            <input type="text" class="form-control" required id="nameStu" name="nameStu">
                         </div>
                         <div class="form-group">
                             <label for="flastStu"> Father lastname: </label>
-                            <input type="text" class="form-control" required id="flastStu">
+                            <input type="text" class="form-control" required id="flastStu" name="flastStu">
                         </div>
                         <div class="form-group">
                             <label for="mlastStu"> Mother lastname: </label>
-                            <input type="text" class="form-control" required id="mlastStu">
+                            <input type="text" class="form-control" required id="mlastStu" name="mlastStu">
                         </div>
                         <div class="form-group">
                             <label for="phoneStu"> Phone number: </label>
-                            <input type="text" class="form-control" required id="phoneStu">
+                            <input type="text" class="form-control" required id="phoneStu" name="phoneStu">
                         </div>
                     </div>
                     <div class="col-lg-6">
                         <div class="form-group">
                             <label for="addressStu"> Address: </label>
-                            <input type="text" class="form-control" required id="addressStu">
+                            <input type="text" class="form-control" required id="addressStu" name="addressStu">
                         </div>
                         <div class="form-group">
                             <label for="emailStu"> Email: </label>
-                            <input type="text" class="form-control" required id="emailStu">
+                            <input type="text" class="form-control" required id="emailStu" name="emailStu">
                         </div>
                          <div class="form-group">
                             <label for="curpStu"> CURP: </label>
-                            <input type="text" class="form-control" required id="curplStu">
+                            <input type="text" class="form-control" required id="curplStu" name="curplStu">
                         </div>
                          <div class="form-group">
                             <label for="dateStu"> Start date: </label>
@@ -136,7 +136,7 @@
                         </div>
                     </div>
                 </div>
-                <button type="submit" class="btn btn-primary">Submit</button>
+                <button type="submit" class="btn btn-primary" name="student">Submit</button>
             </form>
         </section>
         

@@ -2,7 +2,6 @@
 <?php
 /*User: Edgar Medina Camarena
  *Date 13/05/17
- *Time 13:53 PM
  * This file open and close the connection to database
  */
     
