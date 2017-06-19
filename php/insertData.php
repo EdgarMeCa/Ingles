@@ -11,14 +11,18 @@
     //Open the connection to the database
     $connection = openConnection();
     
-    
+    //Insert for Access
     if(isset($_POST['access']))
     {
         createNewAccess($_POST['user'],$_POST['pass'],$_POST['role'],$connection);
     }
-
+    //Insert for Student
     if(isset($_POST['student']))
-    {                 createNewStudent($_POST['nameStu'],$_POST['flastStu'],$_POST['mlastStu'],$_POST['phoneStu'],$_POST['addressStu'],$_POST['emailStu'],$_POST['curplStu'],$_POST['date'],$connection);
+    {                   createNewStudent($_POST['nameStu'],$_POST['flastStu'],$_POST['mlastStu'],$_POST['phoneStu'],$_POST['addressStu'],$_POST['emailStu'],$_POST['curplStu'],$_POST['date'],$connection);
+    }
+    //Insert for Teacher
+    if(isset($_POST['student']))
+    {                 createNewTeacher($_POST['nameTea'],$_POST['flastTea'],$_POST['mlastTea'],$_POST['phoneTea'],$_POST['addressTea'],$_POST['emailTea'],$_POST['curplTea'],$_POST['date'],$connection);
     }
 
 
@@ -26,6 +30,11 @@
     function createNewAccess($user,$pass,$role,$connection){
         
         $query = "INSERT INTO acceso (idAcceso,Username,Password,Rol,Region) VALUES (NULL,:User,:Pass,:Role,:Region)";
+ 
+        if(accessExist($connection,$user))
+        {
+            header("location: ../error.php");
+        }
         
         try
         {
@@ -141,5 +150,27 @@
         $month = substr($date,3,2);
         $year = substr($date,6,4);
         return $year . "-" . $month . "-" . $day;
-    }                              
+    }
+    
+    function accessExist($connection,$user){
+        $query = "SELECT * FROM acceso WHERE Username = :user";
+        
+        $sentence = $connection -> prepare($query);
+        $sentence -> bindParam(":user",$user);
+        $sentence -> execute();
+        $result = $sentence -> fetchAll();
+        
+        return queryHaveResult($result);
+    }
+
+    function queryHaveResult($result){
+        $haveOne = 0;
+        foreach($result as $row)
+        {
+            $haveOne = 1 + $haveOne;
+        }
+        return ($haveOne > 0) ? true : false;
+    }
+    
+    
 ?>
