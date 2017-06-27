@@ -1,8 +1,9 @@
 <?php
     /*
     *User: Edgar Medina Camarena
-    *Date 13/05/17
-    * Common Page
+    *Date 20/05/17
+    *This page is for save all records into database.
+    *Only the admin and superadmin have permission to use this page.
     */
     session_start();
     
@@ -144,38 +145,38 @@
                 </div>
             </div>
             
-            <form id="form-teacher">
+            <form id="form-teacher" action="php/insertData.php" method="post">
                 <div class="row">
                     <div class="col-lg-6">
                         <div class="form-group">
                             <label for="nameTea"> Name: </label>
-                            <input type="text" class="form-control" required id="nameTea">
+                            <input type="text" class="form-control" required id="nameTea" name="nameTea">
                         </div>
                         <div class="form-group">
                             <label for="flastTea"> Father lastname: </label>
-                            <input type="text" class="form-control" required id="flastTea">
+                            <input type="text" class="form-control" required id="flastTea" name="flastTea">
                         </div>
                         <div class="form-group">
                             <label for="mlastTea"> Mother lastname: </label>
-                            <input type="text" class="form-control" required id="mlastTea">
+                            <input type="text" class="form-control" required id="mlastTea" name="mlastTea">
                         </div>
                         <div class="form-group">
                             <label for="phoneTea"> Phone number: </label>
-                            <input type="text" class="form-control" required id="phoneTea">
+                            <input type="text" class="form-control" required id="phoneTea" name="phoneTea">
                         </div>
                     </div>
                     <div class="col-lg-6">
                         <div class="form-group">
                             <label for="addressTea"> Address: </label>
-                            <input type="text" class="form-control" required id="addressTea">
+                            <input type="text" class="form-control" required id="addressTea" name="addressTea">
                         </div>
                         <div class="form-group">
                             <label for="emailTea"> Email: </label>
-                            <input type="text" class="form-control" required id="emailTea">
+                            <input type="text" class="form-control" required id="emailTea" name="emailTea">
                         </div>
                         <div class="form-group">
                             <label for="curpTea"> CURP: </label>
-                            <input type="text" class="form-control" required id="curplTea">
+                            <input type="text" class="form-control" required id="curplTea" name="curplTea">
                         </div>
                          <div class="form-group">
                             <label for="dateTea"> Start date: </label>
@@ -183,7 +184,7 @@
                         </div>
                     </div>
                 </div>
-                <button type="submit" class="btn btn-primary">Submit</button>
+                <button type="submit" class="btn btn-primary" name="teacher">Submit</button>
             </form>
         </section>
         
@@ -223,6 +224,6 @@
                 };
                 date_input.datepicker(options);
             })
-</script>
+        </script>
     </body>
 </html>

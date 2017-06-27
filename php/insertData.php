@@ -2,8 +2,8 @@
     /*
     * User: Edgar Medina Camarena
     * Date 16/06/17
-    * These function insert the data into database.
-    * Any function that inserts data must be here.
+    * These functions insert the data into the database.
+    * Any function that insert data into the database must be here.
     */
     include 'connection.php';
     session_start();
@@ -18,14 +18,12 @@
     }
     //Insert for Student
     if(isset($_POST['student']))
-    {                   createNewStudent($_POST['nameStu'],$_POST['flastStu'],$_POST['mlastStu'],$_POST['phoneStu'],$_POST['addressStu'],$_POST['emailStu'],$_POST['curplStu'],$_POST['date'],$connection);
+    {                                                       createNewStudent($_POST['nameStu'],$_POST['flastStu'],$_POST['mlastStu'],$_POST['phoneStu'],$_POST['addressStu'],$_POST['emailStu'],$_POST['curplStu'],$_POST['date'],$connection);
     }
     //Insert for Teacher
-    if(isset($_POST['student']))
+    if(isset($_POST['teacher']))
     {                 createNewTeacher($_POST['nameTea'],$_POST['flastTea'],$_POST['mlastTea'],$_POST['phoneTea'],$_POST['addressTea'],$_POST['emailTea'],$_POST['curplTea'],$_POST['date'],$connection);
     }
-
-
 
     function createNewAccess($user,$pass,$role,$connection){
         
@@ -56,7 +54,8 @@
 
      function createNewStudent($name,$lastname1,$lastname2,$phone,$address,$email,$curp,$date,$connection){
         
-        $query = "INSERT INTO alumno                    (idAlumno,Nombre,APaterno,AMaterno,Telefono,Direccion,Correo,CURP,Estatus,FechaIngreso,FechaSalida,idAcceso) 
+        $query = "INSERT INTO alumno                    
+        (idAlumno,Nombre,APaterno,AMaterno,Telefono,Direccion,Correo,CURP,Estatus,FechaIngreso,FechaSalida,idAcceso) 
         VALUES 
         ('',:Name,:Lastname1,:Lastname2,:Phone,:Address,:Email,:Curp,:Status,:Date,NULL,:Access)";
         $idAccess = getLastAccess($connection);
