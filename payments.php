@@ -1,12 +1,12 @@
 <?php
     /*
-    *User: Edgar Medina Camarena
-    *Date 13/05/17
-    * Common Page
-   */
+    * User: Edgar Medina Camarena
+    * Date 27/06/17
+    * This page is for record the paymamts of all the students and teachers
+    */
     session_start();
     
-    if($_SESSION['user'] == null)
+    if($_SESSION['user'] == null or strcmp($_SESSION['role'],"SUPERADMIN") != 0)
     {
         header("location: index.html");
     }
@@ -41,25 +41,22 @@
                 </div>
                 <div class="collapse navbar-collapse" id="myNavbar">
                     <ul class="nav navbar-nav navbar-right">
-                        <li class="hov"><a href="#myPage">  HOME    </a></li>
+                        <li class="hov"><a href="superpage.php">  HOME    </a></li>
                         <?php 
                             if($_SESSION["role"] == "SUPERADMIN")
                             {
                                 echo "<li class='hov'><a href='record.php'>    RECORD    </a></li>";
                             }
                         ?>
-                         <?php 
-                            if($_SESSION["role"] == "SUPERADMIN")
-                            {
-                                echo "<li class='hov'><a href='payments.php'>    PAYMENTS    </a></li>";
-                            }
-                        ?>
-                        <li class="hov"><a href="#"> RESOURCES </a></li>
+                        <li class="hov"><a href="#myPage"> PAYMENTS </a></li>
+                        <li class="hov"><a href="#"> RESOURCES </a></li>                       
                         <li class="hov"><a href="php/close_session.php">EXIT</a></li>
                     </ul>
                 </div>
             </div>
         </nav>
+        
+        
         
     <!--JavaScript-->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>

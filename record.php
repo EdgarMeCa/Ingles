@@ -46,8 +46,13 @@
                     <ul class="nav navbar-nav navbar-right">
                         <li class="hov"><a href="superpage.php"> HOME    </a></li>
                         <li class='hov'><a href="#myPage"> RECORD </a></li>
+                        <?php 
+                            if($_SESSION["role"] == "SUPERADMIN")
+                            {
+                                echo "<li class='hov'><a href='payments.php'>    PAYMENTS    </a></li>";
+                            }
+                        ?>
                         <li class="hov"><a href="#"> RESOURCES </a></li>
-                        <li class="hov"><a href="#"> CONTACT </a></li>
                         <li class="hov"><a href="php/close_session.php">EXIT</a></li>
                     </ul>
                 </div>
@@ -118,7 +123,7 @@
                         </div>
                         <div class="form-group">
                             <label for="emailStu"> Email: </label>
-                            <input type="text" class="form-control" required id="emailStu" name="emailStu">
+                            <input type="email" class="form-control" required id="emailStu" name="emailStu">
                         </div>
                          <div class="form-group">
                             <label for="curpStu"> CURP: </label>
@@ -172,7 +177,7 @@
                         </div>
                         <div class="form-group">
                             <label for="emailTea"> Email: </label>
-                            <input type="text" class="form-control" required id="emailTea" name="emailTea">
+                            <input type="email" class="form-control" required id="emailTea" name="emailTea">
                         </div>
                         <div class="form-group">
                             <label for="curpTea"> CURP: </label>

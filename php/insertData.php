@@ -10,7 +10,10 @@
 
     //Open the connection to the database
     $connection = openConnection();
-    
+
+    /*****************************************************************************************************************************************
+    *---------------------These ifs are for the control of each form of the application that insert data in the database---------------------*
+    *****************************************************************************************************************************************/
     //Insert for Access
     if(isset($_POST['access']))
     {
@@ -24,6 +27,10 @@
     if(isset($_POST['teacher']))
     {                 createNewTeacher($_POST['nameTea'],$_POST['flastTea'],$_POST['mlastTea'],$_POST['phoneTea'],$_POST['addressTea'],$_POST['emailTea'],$_POST['curplTea'],$_POST['date'],$connection);
     }
+
+    /*****************************************************************************************************************************************
+    * --------------------------------------These functios insert the data in the database of each form--------------------------------------*
+    *****************************************************************************************************************************************/
 
     function createNewAccess($user,$pass,$role,$connection){
         
@@ -117,9 +124,9 @@
         header("location: ../record.php");
     }
 
-    /*
-    * These functios helps with the insertion of data
-    */
+    /*****************************************************************************************************************************************
+    * --------------------------------------------These functios helps with the insertion of data--------------------------------------------*
+    *****************************************************************************************************************************************/
 
     function getLastAccess($connection){
         
