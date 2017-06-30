@@ -2,7 +2,7 @@
     /*
     * User: Edgar Medina Camarena
     * Date 27/06/17
-    * This page is for record the paymamts of all the students and teachers
+    * This page is for record the paymamts of the students and teachers.
     */
     session_start();
     
@@ -25,6 +25,8 @@
         <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <link rel="stylesheet" href="css/comonpage.css">
+        <link rel="stylesheet" href="css/simple-sidebar.css">
+        <link rel="stylesheet" href="css/payment.css">
     </head>
     
     <body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="50">
@@ -56,10 +58,67 @@
             </div>
         </nav>
         
-        
+        <div id="wrapper">
+            <!-- Sidebar -->
+            <div id="sidebar-wrapper">
+                <ul class="sidebar-nav">
+                    <li class="sidebar-brand">
+                        <a href="#">
+                            
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">Dashboard</a>
+                    </li>
+                    <li>
+                        <a href="#">Shortcuts</a>
+                    </li>
+                    <li>
+                        <a href="#">Overview</a>
+                    </li>
+                    <li>
+                        <a href="#">Events</a>
+                    </li>
+                    <li>
+                        <a href="#">About</a>
+                    </li>
+                    <li>
+                        <a href="#">Services</a>
+                    </li>
+                    <li>
+                        <a href="#">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        <!-- /#sidebar-wrapper -->
+            
+             <!-- Page Content -->
+            <section id="page-content-wrapper">
+                <div class="container-fluid topSection">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <span style="font-size:30px;cursor:pointer">&#9776;</span>
+                            <a href="#menu-toggle" class="btn btn-default" id="menu-toggle">Toggle Menu</a>
+                            <h1>Simple Sidebar</h1>
+                            <p>This template has a responsive menu toggling system. The menu will appear collapsed on smaller screens, and will appear non-collapsed on larger screens. When toggled using the button below, the menu will appear/disappear. On small screens, the page content will be pushed off canvas.</p>
+                            <p>Make sure to keep all page content within the <code>#page-content-wrapper</code>.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- /#page-content-wrapper -->
+        </div>
+
         
     <!--JavaScript-->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <!-- Menu Toggle Script -->
+    <script>
+        $("#menu-toggle").click(function(e) {
+            e.preventDefault();
+            $("#wrapper").toggleClass("toggled");
+        });
+    </script>
     </body>
 </html>

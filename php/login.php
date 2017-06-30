@@ -1,7 +1,7 @@
 <?php
     /*
-    *User: Edgar Medina Camarena
-    *Date 13/05/17
+    * User: Edgar Medina Camarena
+    * Date 13/05/17
     * This algorithm is used for login the user 
     */
     include 'connection.php';
