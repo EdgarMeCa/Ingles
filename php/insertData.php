@@ -14,16 +14,16 @@
     /*****************************************************************************************************************************************
     *---------------------These ifs are for the control of each form of the application that insert data in the database---------------------*
     *****************************************************************************************************************************************/
-    //Insert for Access
+    //Insert for new Access
     if(isset($_POST['access']))
     {
         createNewAccess($_POST['user'],$_POST['pass'],$_POST['role'],$connection);
     }
-    //Insert for Student
+    //Insert for new Student
     if(isset($_POST['student']))
     {                                                       createNewStudent($_POST['nameStu'],$_POST['flastStu'],$_POST['mlastStu'],$_POST['phoneStu'],$_POST['addressStu'],$_POST['emailStu'],$_POST['curplStu'],$_POST['date'],$connection);
     }
-    //Insert for Teacher
+    //Insert for new Teacher
     if(isset($_POST['teacher']))
     {                 createNewTeacher($_POST['nameTea'],$_POST['flastTea'],$_POST['mlastTea'],$_POST['phoneTea'],$_POST['addressTea'],$_POST['emailTea'],$_POST['curplTea'],$_POST['date'],$connection);
     }

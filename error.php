@@ -1,8 +1,8 @@
 <?php
     /*
-    *User: Edgar Medina Camarena
-    *Date 06/06/17
-    * Common Page
+    * User: Edgar Medina Camarena
+    * Date 06/06/17
+    * Error page
     */
     session_start();
 ?>
