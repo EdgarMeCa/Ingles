@@ -15,7 +15,7 @@
 <!DOCTYPE HTML>
 <html>
     <head>
-        <title>Start Page</title>
+        <title>Payments</title>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         
@@ -39,6 +39,7 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>                        
                     </button>
+                    <span style="font-size:30px;cursor:pointer" id="menu-toggle">&#9776;</span>
                     <a class="navbar-brand wel-user" href="#myPage"><?php echo "Welcome ".$_SESSION['name'];?></a>
                 </div>
                 <div class="collapse navbar-collapse" id="myNavbar">
@@ -63,12 +64,10 @@
             <div id="sidebar-wrapper">
                 <ul class="sidebar-nav">
                     <li class="sidebar-brand">
-                        <a href="#">
-                            
-                        </a>
+                        <a href="#"></a>
                     </li>
                     <li>
-                        <a href="#">Dashboard</a>
+                        <a href="#" onclick="logicScreens('studentPay');">Dashboard</a>
                     </li>
                     <li>
                         <a href="#">Shortcuts</a>
@@ -97,13 +96,57 @@
                 <div class="container-fluid topSection">
                     <div class="row">
                         <div class="col-lg-12">
-                            <span style="font-size:30px;cursor:pointer">&#9776;</span>
-                            <a href="#menu-toggle" class="btn btn-default" id="menu-toggle">Toggle Menu</a>
+                            <!--<a href="#menu-toggle" class="btn btn-default" id="menu-toggle">Toggle Menu</a>-->
                             <h1>Simple Sidebar</h1>
                             <p>This template has a responsive menu toggling system. The menu will appear collapsed on smaller screens, and will appear non-collapsed on larger screens. When toggled using the button below, the menu will appear/disappear. On small screens, the page content will be pushed off canvas.</p>
                             <p>Make sure to keep all page content within the <code>#page-content-wrapper</code>.</p>
                         </div>
                     </div>
+                </div>
+                
+                <!-- Form for capture the payments of students -->
+                <div class="container-fluid screenClose" id="studentPay">
+                    <form id="form" action="" method="post">
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <div class="form-group">
+                                    <label for="nameStu"> Name: </label>
+                                    <input type="text" class="form-control" required id="nameStu" name="nameStu">
+                                </div>
+                                <div class="form-group">
+                                    <label for="flastStu"> Father lastname: </label>
+                                    <input type="text" class="form-control" required id="flastStu" name="flastStu">
+                                </div>
+                                <div class="form-group">
+                                    <label for="mlastStu"> Mother lastname: </label>
+                                    <input type="text" class="form-control" required id="mlastStu" name="mlastStu">
+                                </div>
+                                <div class="form-group">
+                                    <label for="phoneStu"> Phone number: </label>
+                                    <input type="text" class="form-control" required id="phoneStu" name="phoneStu">
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="form-group">
+                                    <label for="addressStu"> Address: </label>
+                                    <input type="text" class="form-control" required id="addressStu" name="addressStu">
+                                </div>
+                                <div class="form-group">
+                                    <label for="emailStu"> Email: </label>
+                                    <input type="email" class="form-control" required id="emailStu" name="emailStu">
+                                </div>
+                                <div class="form-group">
+                                    <label for="curpStu"> CURP: </label>
+                                    <input type="text" class="form-control" required id="curplStu" name="curplStu">
+                                </div>
+                                <div class="form-group">
+                                    <label for="dateStu"> Start date: </label>
+                                    <input type="text" class="form-control" required id="dateStu" name="date">
+                                </div>
+                            </div>
+                        </div>
+                        <button type="submit" class="btn btn-primary" name="payStudent">Submit</button>
+                    </form>
                 </div>
             </section>
             <!-- /#page-content-wrapper -->
@@ -113,7 +156,9 @@
     <!--JavaScript-->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="js/payments.js"></script>
     <!-- Menu Toggle Script -->
+    <!-- Side menu function -->
     <script>
         $("#menu-toggle").click(function(e) {
             e.preventDefault();

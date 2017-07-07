@@ -1,3 +1,6 @@
 .topSection{
     margin-top: 40px;
 }
+.screenClose {
+    display: none;
+}
