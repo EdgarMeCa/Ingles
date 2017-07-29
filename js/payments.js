@@ -13,6 +13,11 @@ function logicScreens(openScreen){
     switch(openScreen) {
         case 'studentPay': 
             visible_div("studentPay");
+            esconde_div("teacherPay");
+            break;
+        case 'teacherPay':
+            visible_div("teacherPay");
+            esconde_div("studentPay");
             break;
         default: 
             
